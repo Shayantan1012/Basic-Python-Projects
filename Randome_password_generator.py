@@ -10,22 +10,43 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 size=nr_letters+nr_symbols+nr_numbers;
 final_password=""
-while(len(final_password)!=size):
-    char=random.randint(0,2)
-    if(char==1 and nr_letters ):
-        ans_letters=str(letters[random.randint(0,len(letters)-1)])
-        final_password+=ans_letters
-        nr_letters-=1;
+#while(len(final_password)!=size):
+ #   char=random.randint(0,2)
+  #  if(char==1 and nr_letters ):
+   #     ans_letters=str(letters[random.randint(0,len(letters)-1)])
+    #    final_password+=ans_letters
+     #   nr_letters-=1;
     
-    elif(char==2 and nr_symbols):
-        ans_symbols=str(symbols[random.randint(0,len(symbols)-1)])
-        final_password+=ans_symbols
-        nr_symbols-=1
+    #elif(char==2 and nr_symbols):
+     #   ans_symbols=str(symbols[random.randint(0,len(symbols)-1)])
+      #  final_password+=ans_symbols
+       # nr_symbols-=1
 
-    elif(char==0 and nr_numbers):
-        ans_numbers=str(numbers[random.randint(0,len(numbers)-1)])
-        final_password+=ans_numbers
-        nr_numbers-=1
+    #elif(char==0 and nr_numbers):
+     #   ans_numbers=str(numbers[random.randint(0,len(numbers)-1)])
+      #  final_password+=ans_numbers
+       # nr_numbers-=1
         
-print(f"The final password is->{final_password}")
+#print(f"The final password is->{final_password}")
  
+
+password_list = []
+
+for char in range(1, nr_letters + 1):
+  password_list.append(random.choice(letters))
+
+for char in range(1, nr_symbols + 1):
+  password_list += random.choice(symbols)
+
+for char in range(1, nr_numbers + 1):
+  password_list += random.choice(numbers)
+
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+
+password = ""
+for char in password_list:
+  password += char
+
+print(f"Your password is: {password}")
