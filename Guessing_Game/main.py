@@ -24,7 +24,7 @@ def play_game():
                 ans=(input('Whose followers is greater????->').upper())
                 
                 if(ans=='A' and folloA<folloB):
-                    print('You Loose!!!')
+                    print('You Loose!!☕!')
                     break;
                 elif(ans=='A' and folloA>folloB):
                     print('You Win!!!')   
@@ -34,15 +34,17 @@ def play_game():
                     score+=1 
 
                 elif(ans=='B' and folloA>folloB):
-                    print('You Loose!!!')  
+                    print('You Loose!!!☕')  
                     break;  
                 
             
         print(f'Your Score is->{score}')
         char=input("Do you want to continue then give 'Y' Or 'N'->").lower()
+        print("Women☕")
         if(char=='y'):
             should_continue=True    
         else:
             should_continue=False    
 
 play_game()
+
